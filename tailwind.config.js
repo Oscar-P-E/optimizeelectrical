@@ -5,7 +5,15 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ['Montserrat', 'sans-serif'],
+      },
+      colors: {
+        'oe-orange': 'hsl(36, 73%, 51%)',
+        'oe-blue': 'hsl(212, 65%, 23%)',
+      },
+    },
   },
   plugins: [],
 }

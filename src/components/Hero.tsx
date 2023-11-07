@@ -16,7 +16,7 @@ export const Hero = () => {
         onCanPlayThrough={() => setVideoLoaded(true)}
       >
         <source
-          src="/src/assets/video/optimize-electrical-no-audio.mp4"
+          src="/video/optimize-electrical-no-audio.mp4"
           type="video/mp4"
         />
       </video>

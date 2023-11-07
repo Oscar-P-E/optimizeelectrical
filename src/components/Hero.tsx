@@ -38,14 +38,7 @@ export const Hero = () => {
               className="text-oe-orange pr-2 sm:pr-3"
               icon={faCheck}
             />
-            Money Back Guarantee
-          </li>
-          <li className="text-white text-xl sm:text-2xl text-center">
-            <FontAwesomeIcon
-              className="text-oe-orange pr-2 sm:pr-3"
-              icon={faCheck}
-            />
-            Lifetime Workmanship Warranty
+            Lifetime Workmanship Guarantee
           </li>
           <li className="text-white text-xl sm:text-2xl text-center">
             <FontAwesomeIcon

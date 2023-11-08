@@ -5,12 +5,12 @@ export const Contact = () => {
         className="w-full h-64 md:h-auto md:w-1/2 flex justify-center items-center bg-no-repeat bg-cover bg-center opacity-95"
         style={{ backgroundImage: `url('/img/Electrical-image.jpg')` }}
       ></div>
-      <div className="w-full md:w-1/2 flex flex-col justify-center items-center md:items-start bg-oe-blue-10 p-6 md:p-16">
-        <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-4 md:mb-6 text-oe-blue">
+      <div className="w-full md:w-1/2 flex flex-col text-center md:text-left justify-center items-center md:items-start bg-oe-blue-10 p-6 md:p-16">
+        <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 md:mb-14 text-oe-blue">
           Contact Us
         </h2>
-        <p className="text-2xl md:text-3xl lg:text-4xl mb-3 md:mb-4 text-gray-500">
-          Phone:{" "}
+        <p className="text-xl md:text-2xl lg:text-3xl mb-4 md:mb-6 text-gray-500 flex gap-2 flex-col">
+          Phone:<br />
           <a
             href="tel:+61477838648"
             className="text-oe-orange hover:text-oe-blue transition-colors whitespace-nowrap"
@@ -18,10 +18,10 @@ export const Contact = () => {
             0477 838 648
           </a>
         </p>
-        <p className="text-2xl md:text-3xl lg:text-4xl text-gray-500 ">
-          Email:{" "}
+        <p className="text-xl md:text-2xl lg:text-3xl text-gray-500 flex flex-col gap-2">
+          Email:<br />
           <a
-            href="mailto:opelm1@gmail.com"
+            href="mailto:optimizeelectrical@gmail.com"
             className="text-oe-orange hover:text-oe-blue transition-colors whitespace-nowrap"
           >
             optimizeelectrical@gmail.com

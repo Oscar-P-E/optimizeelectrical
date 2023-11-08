@@ -4,9 +4,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 type SideMenuProps = {
   isOpen: boolean;
   setIsOpen: (isOpen: boolean) => void;
+  scrollToSection: (sectionId: string) => void;
 };
 
-export const SideMenu = ({ isOpen, setIsOpen }: SideMenuProps) => {
+export const SideMenu = ({ isOpen, setIsOpen, scrollToSection }: SideMenuProps) => {
   return (
     <>
       {/* Side menu */}
@@ -19,32 +20,38 @@ export const SideMenu = ({ isOpen, setIsOpen }: SideMenuProps) => {
           <FontAwesomeIcon icon={faTimes} />
         </button>
         <div className="flex flex-col pt-8">
+          {/* Update these anchor tags to call scrollToSection with the appropriate section ID */}
           <a
-            href="pages/index.html"
+            href="#"
+            onClick={() => scrollToSection('home')}
             className="text-white block pt-4 text-lg hover:text-oe-blue transition-all duration-300"
           >
             HOME
           </a>
           <a
-            href="pages/residential.html"
+            href="#"
+            onClick={() => scrollToSection('residential')}
             className="text-white block pt-4 text-lg hover:text-oe-blue transition-all duration-300"
           >
             RESIDENTIAL
           </a>
           <a
-            href="pages/commercial.html"
+            href="#"
+            onClick={() => scrollToSection('commercial')}
             className="text-white block pt-4 text-lg hover:text-oe-blue transition-all duration-300"
           >
             COMMERCIAL
           </a>
           <a
-            href="pages/areas.html"
+            href="#"
+            onClick={() => scrollToSection('areas')}
             className="text-white block pt-4 text-lg hover:text-oe-blue transition-all duration-300"
           >
             FIND AN ELECTRICIAN NEAR YOU
           </a>
           <a
-            href="pages/contact.html"
+            href="#"
+            onClick={() => scrollToSection('contact')}
             className="text-white block pt-4 text-lg hover:text-oe-blue transition-all duration-300"
           >
             CONTACT US

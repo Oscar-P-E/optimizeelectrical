@@ -38,10 +38,10 @@ export const Testimonials = () => {
     infinite: true,
     speed: 1000,
     autoplay: true,
-    autoplaySpeed: 6000,
+    autoplaySpeed: 10000,
     slidesToShow: 3,
     slidesToScroll: 1,
-    pauseOnHover: true,
+    pauseOnHover: false,
     pauseOnFocus: false,
     pauseOnDotsHover: false,
     responsive: [
@@ -49,12 +49,14 @@ export const Testimonials = () => {
         breakpoint: 1024, // for screens larger than 1024px
         settings: {
           slidesToShow: 2, // show 2 slides
+          autoplaySpeed: 12000,
         },
       },
       {
         breakpoint: 600, // for screens larger than 600px
         settings: {
           slidesToShow: 1, // show 1 slide
+          autoplaySpeed: 14000,
         },
       },
     ],
@@ -82,7 +84,7 @@ export const Testimonials = () => {
       <style>
         {`
           .slick-slide {
-            padding: 15px;
+            padding: 15px 10px;
           }
           .testimonial-card {
             display: flex;
@@ -116,7 +118,7 @@ export const Testimonials = () => {
         `}
       </style>
       <div className="bg-oe-blue py-12 md:py-32">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-8">
           <h2 className="text-center text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-12 md:mb-20">
             Testimonials
           </h2>

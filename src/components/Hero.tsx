@@ -84,9 +84,9 @@ export const Hero = ({ scrollToContact }: HeroProps) => {
             </motion.li>
           ))}
         </ul>
-
+<div className="pt-2"></div>
         <motion.button
-          className="bg-oe-orange text-white py-2 px-6 sm:px-8 rounded-md text-xl sm:text-2xl transform transition duration-300 hover:scale-105 relative z-10"
+          className="bg-oe-orange text-white py-2 px-6 sm:px-8 rounded-xl text-xl sm:text-2xl transform transition duration-300 hover:scale-105 relative z-10"
           variants={buttonVariants}
           initial="hidden"
           animate="visible"

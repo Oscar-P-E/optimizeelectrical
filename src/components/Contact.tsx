@@ -9,7 +9,7 @@ export const Contact = () => {
         style={{ backgroundImage: `url('/img/Electrical-image.jpg')` }}
       ></div>
       <div className="w-full md:w-1/2 flex flex-col text-center md:text-left justify-center items-center md:items-start  p-6 md:p-16">
-        <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 md:mb-14 text-oe-blue">
+        <h2 className="pt-8 md:pt-0 text-5xl md:text-6xl lg:text-7xl font-bold mb-6 md:mb-14 text-oe-blue">
           Contact Us
         </h2>
         <p className="text-xl md:text-2xl lg:text-3xl mb-4 md:mb-6 text-gray-500 flex gap-2 flex-col">

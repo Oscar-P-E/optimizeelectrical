@@ -1,4 +1,4 @@
-import React from "react";
+import { useState, useEffect } from "react";
 import { Header } from "./components/Header";
 import { SideMenu } from "./components/SideMenu";
 import { Hero } from "./components/Hero";
@@ -9,13 +9,35 @@ import { ServiceAreas } from "./components/ServiceAreas";
 import { Testimonials } from "./components/Testimonials";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
+import { FaArrowUp } from "react-icons/fa";
 
 const App = () => {
-  const [isOpen, setIsOpen] = React.useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [showScrollToTop, setShowScrollToTop] = useState(false);
 
   const scrollToSection = (sectionId: string) => {
     document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
   };
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  useEffect(() => {
+    const checkScrollTop = () => {
+      if (!showScrollToTop && window.pageYOffset > 400) {
+        setShowScrollToTop(true);
+      } else if (showScrollToTop && window.pageYOffset <= 400) {
+        setShowScrollToTop(false);
+      }
+    };
+
+    window.addEventListener("scroll", checkScrollTop);
+
+    return () => {
+      window.removeEventListener("scroll", checkScrollTop);
+    };
+  }, [showScrollToTop]);
 
   return (
     <div>
@@ -25,36 +47,29 @@ const App = () => {
         scrollToSection={scrollToSection}
       />
 
-      {/* Content */}
       <div className="flex flex-col min-h-screen">
         <Header setIsOpen={setIsOpen} />
-
-        {/* Hero image/video with CTA */}
         <Hero scrollToContact={() => scrollToSection("contact")} />
       </div>
 
-      {/* About text and image slideshow */}
       <About />
-
-      {/* Residential Electrician, Commercial Electrician, Electrical Upgrades 3 cards */}
       <Services />
-
-      {/* List of Services */}
       <ServicesList />
-
-      {/* Areas we service */}
       <ServiceAreas />
-
-      {/* What our customers are saying */}
       <Testimonials />
-
-      {/* Contact Form and info */}
-      <div id="contact">
-        <Contact />
-      </div>
-
-      {/* Footer */}
+      <Contact />
       <Footer />
+
+      {/* Scroll to Top Button */}
+      {showScrollToTop && (
+        <button
+          onClick={scrollToTop}
+          className="fixed bottom-4 right-4 z-50 p-2 bg-oe-blue text-white rounded-full shadow-lg cursor-pointer hover:bg-oe-orange transition duration-300"
+          aria-label="Scroll to top"
+        >
+          <FaArrowUp size={20} />
+        </button>
+      )}
     </div>
   );
 };

@@ -38,6 +38,7 @@ export const ServiceAreas = () => {
 
   return (
     <motion.div
+      id="service-areas"
       className="min-h-screen py-12 bg-white flex flex-col justify-center items-center"
       variants={containerVariants}
       initial="hidden"

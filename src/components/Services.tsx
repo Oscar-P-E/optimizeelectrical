@@ -10,7 +10,7 @@ import {
 
 export const Services = () => {
   return (
-    <div className="py-12 md:py-36 lg:max-w-[90%] mx-auto bg-white text-oe-blue cursor-default">
+    <div id="services" className="py-12 md:py-36 lg:max-w-[90%] mx-auto bg-white text-oe-blue cursor-default">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Residential Electrician Card */}

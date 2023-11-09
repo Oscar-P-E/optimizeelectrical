@@ -2,6 +2,7 @@ import Slider from "react-slick";
 import { FaQuoteLeft, FaUserCircle } from "react-icons/fa";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { useRef } from "react";
 
 export const Testimonials = () => {
   const testimonials = [
@@ -37,10 +38,10 @@ export const Testimonials = () => {
     infinite: true,
     speed: 1000,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 6000,
     slidesToShow: 3,
     slidesToScroll: 1,
-    pauseOnHover: false,
+    pauseOnHover: true,
     pauseOnFocus: false,
     pauseOnDotsHover: false,
     responsive: [
@@ -57,6 +58,23 @@ export const Testimonials = () => {
         },
       },
     ],
+  };
+
+  interface CustomSlider extends Slider {
+    slickPause: () => void;
+    slickPlay: () => void;
+  }
+
+  const sliderRef = useRef<CustomSlider>(null);
+
+  const pauseSlider = () => {
+    if (!sliderRef.current) return;
+    sliderRef.current.slickPause();
+  };
+
+  const playSlider = () => {
+    if (!sliderRef.current) return;
+    sliderRef.current.slickPlay();
   };
 
   return (
@@ -89,6 +107,12 @@ export const Testimonials = () => {
             color: #4A90E2;
             margin-bottom: 20px;
           }
+          .slick-slider:hover {
+            cursor: grab;
+          }
+          .slick-slider:active {
+            cursor: grabbing;
+          }
         `}
       </style>
       <div className="bg-oe-blue py-12 md:py-32">
@@ -96,22 +120,25 @@ export const Testimonials = () => {
           <h2 className="text-center text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-12 md:mb-20">
             Testimonials
           </h2>
-          <Slider {...settings}>
-            {testimonials.map((testimonial, index) => (
-              <div key={index} className="px-4">
-                <div className="testimonial-card bg-white rounded-lg shadow-md">
-                  <FaQuoteLeft className="testimonial-icon mr-auto w-8" />
-                  <p className="testimonial-quote text-gray-600">
-                    {testimonial.quote}
-                  </p>
-                  <FaUserCircle className="testimonial-icon" />
-                  <p className="testimonial-author text-gray-900">
-                    {testimonial.author}
-                  </p>
+          {/* Wrap the Slider in a div and attach the event handlers to this div */}
+          <div onMouseEnter={pauseSlider} onMouseLeave={playSlider}>
+            <Slider ref={sliderRef} {...settings}>
+              {testimonials.map((testimonial, index) => (
+                <div key={index} className="px-4">
+                  <div className="testimonial-card bg-white rounded-lg shadow-md">
+                    <FaQuoteLeft className="testimonial-icon mr-auto w-8" />
+                    <p className="testimonial-quote text-gray-600">
+                      {testimonial.quote}
+                    </p>
+                    <FaUserCircle className="testimonial-icon" />
+                    <p className="testimonial-author text-gray-900">
+                      {testimonial.author}
+                    </p>
+                  </div>
                 </div>
-              </div>
-            ))}
-          </Slider>
+              ))}
+            </Slider>
+          </div>
         </div>
       </div>
     </>

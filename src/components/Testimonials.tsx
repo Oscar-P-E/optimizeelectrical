@@ -12,7 +12,7 @@ export const Testimonials = () => {
     },
     {
       quote:
-        "Craig is doing all the electrical work for Pizza Hut and we're well satisfied. He's an easy guy to work with without any hassle. I personally recommend hiring Craig for any electrical help.",
+        "Got a Grab One for Craig. I called him and he was here within the hour and did a great job. Thanks, Craig. Really impressed!",
       author: "Anonymous",
     },
     {

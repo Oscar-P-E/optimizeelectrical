@@ -79,7 +79,7 @@ export const SideMenu = (props: SideMenuProps) => {
             href="#services"
             onClick={(e) => {
               e.preventDefault();
-              handleLinkClick("commercial");
+              handleLinkClick("services");
             }}
             className="text-white block pt-4 text-lg hover:text-oe-blue transition-all duration-300"
           >

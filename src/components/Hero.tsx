@@ -52,6 +52,8 @@ export const Hero = ({ scrollToContact }: HeroProps) => {
           videoLoaded ? "bg-oe-blue bg-opacity-50" : "bg-oe-blue"
         } pb-16`}
       >
+        {/* <div className="pt-2"></div> */}
+
         <motion.h1
           className="text-white text-4xl sm:text-5xl md:text-6xl font-bold text-center leading-tight px-4 max-w-screen-lg"
           variants={textVariants}
@@ -84,7 +86,7 @@ export const Hero = ({ scrollToContact }: HeroProps) => {
             </motion.li>
           ))}
         </ul>
-<div className="pt-2"></div>
+        <div className="pt-1"></div>
         <motion.button
           className="bg-oe-orange text-white py-2 px-6 sm:px-8 rounded-xl text-xl sm:text-2xl transform transition duration-300 hover:scale-105 relative z-10"
           variants={buttonVariants}
@@ -94,6 +96,7 @@ export const Hero = ({ scrollToContact }: HeroProps) => {
         >
           Contact Us
         </motion.button>
+        <div className="pb-4"></div>
       </div>
     </div>
   );

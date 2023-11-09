@@ -17,10 +17,14 @@ export const Header = ({ setIsOpen }: HeaderProps) => {
           />
         </div>
 
-        <div className="text-3xl md:text-2xl lg:text-3xl text-oe-orange whitespace-nowrap mx-auto md:pr-14 md:absolute md:right-8 md:top-10">
+        {/* Make phone number clickable */}
+        <a
+          href="tel:0477838648"
+          className="text-3xl md:text-2xl lg:text-3xl text-oe-orange whitespace-nowrap mx-auto md:pr-14 md:absolute md:right-8 md:top-10 flex items-center"
+        >
           <FontAwesomeIcon className="pr-4" icon={faPhone} />
           0477 838 648
-        </div>
+        </a>
 
         <button
           className="text-4xl md:text-3xl lg:text-4xl text-oe-orange w-full md:w-auto md:absolute md:right-5 md:top-10 md:mt-0 mx-auto md:mx-0 pt-5 md:pt-0"

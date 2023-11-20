@@ -1,5 +1,6 @@
 # Just in case / safety
 .env
+.env_bak
 .env*.local
 
 # Logs

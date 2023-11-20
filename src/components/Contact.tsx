@@ -64,9 +64,9 @@ export const Contact = () => {
   return (
     <div
       id="contact"
-      className="flex items-center justify-center h-screen bg-gray-100"
+      className="flex flex-col items-center justify-center h-screen bg-gray-100"
     >
-      <div className="flex bg-white shadow-md rounded-lg overflow-hidden">
+      <div className="flex bg-white shadow-md rounded-lg overflow-hidden w-3/4">
         {/* Image Section */}
         <div className="hidden md:block md:w-5/12">
           <img
@@ -81,6 +81,9 @@ export const Contact = () => {
           onSubmit={formik.handleSubmit}
           className="w-full md:w-1/2 px-6 py-10 md:px-12 md:py-12 mb-4"
         >
+          {/* Heading Section */}
+          <h1 className="text-4xl font-bold text-oe-blue mb-8">Contact Us</h1>
+
           {/* Name Field */}
           <div className="mb-4">
             <label

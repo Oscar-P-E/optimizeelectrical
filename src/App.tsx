@@ -10,6 +10,7 @@ import { Testimonials } from "./components/Testimonials";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
 import { useTawkTo } from "./hooks/useTawkTo";
+import { Helmet } from "react-helmet";
 
 const App = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,15 +21,38 @@ const App = () => {
 
   useTawkTo();
 
+  const videoJsonLd = {
+    "@context": "http://schema.org",
+    "@type": "VideoObject",
+    name: "Optimize Electrical Video",
+    description: "Optimize Electrical on the Sunshine Coast, Queensland",
+    thumbnailUrl: "/img/optimize-electrical-poster.jpg",
+    // "uploadDate": "Upload date of the video",
+    // "duration": "Duration of the video",
+    contentUrl: "/video/optimize-electrical-no-audio.mp4",
+  };
+
   return (
     <div>
+      <Helmet>
+        <title>Optimize Electrical</title>
+        <meta
+          name="description"
+          content="Your local electrician on the Sunshine Coast, Beerwah 4519, Caloundra 4551, Nambour 4560, electrician near me"
+        />
+        <meta property="og:image" content="/img/Screenshot.jpg" />
+        <script type="application/ld+json">
+          {JSON.stringify(videoJsonLd)}
+        </script>
+      </Helmet>
+
       <SideMenu
         isOpen={isOpen}
         setIsOpen={setIsOpen}
         scrollToSection={scrollToSection}
       />
 
-      <div className="flex flex-col min-h-screen">
+      <div className="flex flex-col">
         <Header setIsOpen={setIsOpen} />
         <Hero scrollToContact={() => scrollToSection("contact")} />
       </div>

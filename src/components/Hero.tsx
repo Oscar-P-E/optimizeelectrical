@@ -38,6 +38,7 @@ export const Hero = ({ scrollToContact }: HeroProps) => {
         muted
         playsInline
         className="absolute z-10 w-full h-full object-cover"
+        
         onCanPlayThrough={() => setVideoLoaded(true)}
       >
         <source

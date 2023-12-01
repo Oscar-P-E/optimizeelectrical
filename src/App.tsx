@@ -27,8 +27,8 @@ const App = () => {
     name: "Optimize Electrical Video",
     description: "Optimize Electrical on the Sunshine Coast, Queensland",
     thumbnailUrl: "/img/optimize-electrical-poster.jpg",
-    // "uploadDate": "Upload date of the video",
-    // "duration": "Duration of the video",
+    uploadDate: "2021-11-08T08:00:00+08:00",
+    duration: "PT31S", // PT = Period of Time
     contentUrl: "/video/optimize-electrical-no-audio.mp4",
   };
 
